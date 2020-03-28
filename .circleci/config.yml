@@ -101,23 +101,6 @@ jobs:
 
             mkdir release
             cp out/target/product/${CODENAME}/SHRP*.zip release/
-      # This step is Custom, only intended for 32bit builds for mblu2 device
-      - run:
-          name: Make 32-bit Image too
-          command: |
-            make clean
-            sed -i 's/false/true/g' device/meizu/mblu2/AndroidProducts.mk
-            source build/envsetup.sh 2>&1 >> /tmp/log.txt
-            lunch omni_${CODENAME}-${BUILDTYPE} 2>&1 >> /tmp/log.txt
-
-            /tmp/act.sh & make -j$(nproc --all) recoveryimage 2>&1 | sudo tee -api /tmp/log.txt
-
-            echo -e "\n CCache Stats"
-            ccache -s
-
-            rename 's/\.zip$/_64bit.zip/' release/*zip
-            rename 's/\.zip$/_32bit.zip/' out/target/product/${CODENAME}/SHRP*zip
-            cp out/target/product/${CODENAME}/SHRP*.zip release/
       - run:
           name: Upload Log
           command: |
