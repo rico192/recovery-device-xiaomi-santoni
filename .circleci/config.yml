@@ -7,11 +7,11 @@ jobs:
       MANIFEST_BR: '9.0' # Optional: State SHRP Manifest Branch. i.e., '9.0' or other
       VENDOR: 'xiaomi' # State Product Vendor or Manufacturer
       CODENAME: 'santoni' # Device Codename
-      # GitHubMail: '' # Enter GitHub User EMail Address. Has been set in context.
-      # GitHubName: '' # Enter GitHub Username. Has been set in context.
+      GitHubMail: 'ricoananda.9c26@gmail.com' # Enter GitHub User EMail Address. Has been set in context.
+      GitHubName: 'rico192' # Enter GitHub Username. Has been set in context.
       ## Add the following Token in encrypted form inside CircleCI
-      # GITHUB_TOKEN: '' # GitHub OAuth Token, for release. Has been set in context.
-      Device_Tree: 'https://github.com/rico192/recovery-device-xiaomi-santoni' # The Full URL of DT
+      GITHUB_TOKEN: 'Rico123%' # GitHub OAuth Token, for release. Has been set in context.
+      Device_Tree: 'https://github.com/rico192/recovery-device-xiaomi-santoni.git' # The Full URL of DT
       BUILDTYPE: 'eng' # Set as eng or userdebug
       VER: '2.2'
     working_directory: /home/builder/shrp/
