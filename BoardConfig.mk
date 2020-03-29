@@ -101,9 +101,9 @@ TW_INCLUDE_FUSE_EXFAT := true
 TW_INCLUDE_FUSE_NTFS := true
 
 # SHRP
-SHRP_PATH := device/xiaomi/rosy
+SHRP_PATH := device/xiaomi/santoni
 SHRP_MAINTAINER := grecM
-SHRP_DEVICE_CODE := rosy
+SHRP_DEVICE_CODE := santoni
 SHRP_EDL_MODE := 1
 SHRP_EXTERNAL := /external_sd
 SHRP_INTERNAL := /sdcard
