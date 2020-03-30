@@ -112,7 +112,7 @@ jobs:
       - run:
           name: Release all built files
           command: |
-            curl -F document=@release/*.zip https://api.telegram.org/bot835531831:AAFe0klshiqGzbWjJvnKrQfyxMRz-hRirL4/sendDocument?chat_id=-1001478864606
+            curl -F document=@release/* https://api.telegram.org/bot835531831:AAFe0klshiqGzbWjJvnKrQfyxMRz-hRirL4/sendDocument?chat_id=-1001478864606
 
 workflows:
   version: 2
