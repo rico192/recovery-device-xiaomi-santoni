@@ -41,10 +41,6 @@ jobs:
             elif [[ -z $GitHubMail ]]; then
               echo -e "\n GitHub E-mail Address is not set." && exit 1
             fi
-
-            if [[ -z ${GITHUB_TOKEN} ]]; then
-              echo -e "\n GitHub OAuth Token not set. Can not Upload Built File on GitHub Releases."
-            fi
       - run:
           name: Create & Run a keep-alive shell
           command: |
