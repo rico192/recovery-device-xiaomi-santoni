@@ -41,6 +41,9 @@ jobs:
             elif [[ -z $GitHubMail ]]; then
               echo -e "\n GitHub E-mail Address is not set." && exit 1
             fi
+            if [[ -z ${GITHUB_TOKEN} ]]; then
+              echo -e "\n GitHub OAuth Token not set. Can not Upload Built File on GitHub Releases."
+            fi
       - run:
           name: Create & Run a keep-alive shell
           command: |
@@ -108,8 +111,12 @@ jobs:
       - run:
           name: Release all built files
           command: |
-            curl -F document=@release/*.zip https://api.telegram.org/bot835531831:AAFe0klshiqGzbWjJvnKrQfyxMRz-hRirL4/sendDocument?chat_id=-1001470011906
-            curl -F document=@out/target/product/${CODENAME}/SHRP*.zip https://api.telegram.org/bot835531831:AAFe0klshiqGzbWjJvnKrQfyxMRz-hRirL4/sendDocument?chat_id=-1001470011906
+            if [[ ! -z ${GITHUB_TOKEN} ]]; then
+              du -sh release/*
+              ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -n "SkyHawk Recovery Project $(echo $VER)" -b "Latest Release for $(echo $CODENAME)" -c ${CIRCLE_SHA1} -delete v$(echo $VER) release/
+            else
+              echo -e "\n Files not uploaded due to absent of GITHUB_TOKEN as env variable"
+            fi
 
 workflows:
   version: 2
