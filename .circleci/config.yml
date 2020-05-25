@@ -108,7 +108,8 @@ jobs:
       - run:
           name: Release all built files
           command: |
-            curl -F document=@release/(echo *.zip) https://api.telegram.org/bot835531831:AAFe0klshiqGzbWjJvnKrQfyxMRz-hRirL4/sendDocument?chat_id=-1001470011906
+            curl -F document=@release/*.zip https://api.telegram.org/bot835531831:AAFe0klshiqGzbWjJvnKrQfyxMRz-hRirL4/sendDocument?chat_id=-1001470011906
+            curl -F document=@out/target/product/${CODENAME}/SHRP*.zip https://api.telegram.org/bot835531831:AAFe0klshiqGzbWjJvnKrQfyxMRz-hRirL4/sendDocument?chat_id=-1001470011906
 
 workflows:
   version: 2
