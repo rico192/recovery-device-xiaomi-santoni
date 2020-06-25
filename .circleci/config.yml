@@ -4,7 +4,7 @@ jobs:
     docker:
       - image: fr3akyphantom/droid-builder:latest
     environment:
-      MANIFEST_BR: '9.0' # Optional: State SHRP Manifest Branch. i.e., '9.0' or other
+      MANIFEST_BR: 'android-9.0' # Optional: State SHRP Manifest Branch. i.e., '9.0' or other
       VENDOR: 'xiaomi' # State Product Vendor or Manufacturer
       CODENAME: 'santoni' # Device Codename
       GitHubMail: 'ricoananda.9c26@gmail.com' # Enter GitHub User EMail Address. Has been set in context.
