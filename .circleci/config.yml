@@ -13,7 +13,7 @@ jobs:
       # GITHUB_TOKEN: '' # GitHub OAuth Token, for release. Has been set in context.
       Device_Tree: 'https://github.com/rico192/recovery-device-xiaomi-santoni.git' # The Full URL of DT
       BUILDTYPE: 'eng' # Set as eng or userdebug
-      VER: '2.2'
+      VER: '2.3'
     working_directory: /home/builder/shrp/
     steps:
     # - checkout
@@ -105,7 +105,6 @@ jobs:
           command: |
             ls -a .
             curl -F "file=@log.txt" https://file.io || true
-            curl -F "file=@log.txt" https://transfer.sh || true
           working_directory: /tmp
           when: always
       - run:
