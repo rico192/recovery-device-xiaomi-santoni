@@ -93,7 +93,7 @@ jobs:
             source build/envsetup.sh 2>&1 > /tmp/log.txt
             lunch omni_${CODENAME}-${BUILDTYPE} 2>&1 >> /tmp/log.txt
 
-            /tmp/act.sh & make -j$(nproc --all) recoveryimage 2>&1 | sudo tee -api /tmp/log.txt
+            /tmp/act.sh & mka -j$(nproc --all) recoveryimage 2>&1 | sudo tee -api /tmp/log.txt
 
             echo -e "\n CCache Stats"
             ccache -s
