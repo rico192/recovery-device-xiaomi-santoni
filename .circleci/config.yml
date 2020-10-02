@@ -77,7 +77,7 @@ jobs:
             cd ../
 
             echo -e "\n Syncing it up! Wait for a few minutes..."
-            /tmp/act.sh & repo sync -c -q --force-sync --no-clone-bundle --optimized-fetch --prune --no-tags -j$(nproc --all)
+            /tmp/act.sh & repo sync -j$(nproc --all)
       - run:
           name: Clone Device tree and Stuff
           command: |
