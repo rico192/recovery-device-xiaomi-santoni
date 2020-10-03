@@ -82,6 +82,7 @@ jobs:
           name: Clone Device tree and Stuff
           command: |
             # Clone DT
+            git clone https://github.com/AOSPA/android_hardware_qcom_bootctrl hardware/qcom/bootctrl -b quartz-aosp
             git clone ${Device_Tree} device/${VENDOR}/${CODENAME}
             # Custom Patches are non-aligned, need to fix media0.patch & twres.patch
             # Then apply using 'patch' command
